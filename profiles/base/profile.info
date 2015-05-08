@@ -25,6 +25,7 @@ DOTMODULES="
     xprofile
     autorandr
     i3
+    vim_undodir
 "
 
 MODULES="
