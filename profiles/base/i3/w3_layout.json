@@ -1,0 +1,31 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 452,
+               "width": 738,
+               "x": 0,
+               "y": 0
+            },
+            "name": "alpar@alpar:~",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Terminator$",
+                "instance": "^terminator$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

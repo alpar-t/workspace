@@ -23,6 +23,8 @@ DOTMODULES="
     Xmodmap
     xbindkeysrc
     xprofile
+    autorandr
+    i3
 "
 
 MODULES="

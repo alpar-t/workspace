@@ -1,0 +1,25 @@
+output eDP1
+off
+output DP1
+primary
+mode 3840x2160
+pos 1280x0
+rotate normal
+rate 30.00
+output DP2
+off
+output DP2-1
+off
+output DP2-2
+off
+output DP2-3
+mode 1280x1024
+pos 0x1136
+rotate normal
+rate 75.02
+output HDMI1
+off
+output HDMI2
+off
+output VIRTUAL1
+off
