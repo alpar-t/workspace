@@ -1,0 +1,40 @@
+#!/bin/bash
+NAME_PREFIX="base"
+
+DOTMODULES="
+    env             
+    vim             
+    tmux.conf       
+    vimrc           
+    DirB
+    inputrc
+    vim
+    aspell.en.prepl
+    aspell.en.pws
+    curlrc
+    gitconfig
+    gtkrc-2.0
+    gtkrc-2.0-kde4
+    kderc
+    network-manager
+    subversion
+    vimperator
+    vimperatorrc
+    Xmodmap
+    xbindkeysrc
+    xprofile
+"
+
+MODULES="
+   bin    
+   lib   		    
+"
+
+PREFIXED_DOTMODULES="
+    bashrc
+"
+
+PREFIXED_MODULES="
+    
+"
+

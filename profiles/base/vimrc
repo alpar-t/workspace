@@ -1,0 +1,180 @@
+source /etc/vimrc
+
+""" Enable pathogen
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin on
+filetype plugin indent on
+
+
+""" vimdiff """"""""""""""""""""""""""""""""""""""'''''"""""""""""""""""""""""
+"" add -d to diff to ignore trailing whitespace
+"set diffopt+=iwhite
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""" Defaults """""""""""""""""""""""""""""""""""""""""""""""""""""""""""'""""""
+if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+   set fileencodings=utf-8,latin1
+endif
+set bs=2        " allow backspacing over everything in insert mode
+"set ai         " always set autoindenting on
+set viminfo='20,\"500    " read/write a .viminfo file, don't store more
+            " than 50 lines of registers
+
+if has("autocmd")
+  autocmd BufRead *.tex set tw=100
+  autocmd BufRead *.md set ft=markdown
+  autocmd BufRead *.md set tw=100
+  autocmd BufRead *.md set spell
+  " When editing a file, always jump to the last cursor position
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal! g'\"" |
+  \ endif
+endif
+
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &term=="xterm"
+     set t_Co=8
+     set t_Sb=^[[4%dm
+     set t_Sf=^[[3%dm
+endif
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+colorscheme dante
+
+set nocompatible
+set autoindent
+set smartindent
+
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+
+im :<CR> :<CR><TAB>
+set showmatch
+set history=7000
+set noruler
+
+""" Persistent undo """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if version > 700
+	set undodir=~/.vim_undodir
+	set undofile
+	set undolevels=10000  "maximum number of changes that can be undone
+	set undoreload=100000 "maximum number lines to save for undo on a buffer reload
+endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Matk lines that are overlength """
+" set colorcolumn=80
+
+nnoremap <silent> <leader>lt :TlistToggle<CR>
+
+
+""" Statusline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2
+set statusline=set statusline=+++\ %n\ %r%m\ %t\ %3l:%-2c\ %y\ %=%F\ L=%-3L\ P=%3p%%\ +++
+if version > 700
+	au InsertEnter * hi StatusLine term=bold,reverse ctermbg=5
+	au InsertLeave * hi StatusLine term=bold,reverse ctermbg=2
+endif
+hi StatusLine ctermbg=2 ctermfg=0
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Templates """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Looks for template file by file extension in templates directory
+if version > 700
+	autocmd! BufNewFile * silent!  0r ~/.vim/templates/%:e
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""
+" => Python section
+""""""""""""""""""""""""""""""
+"let python_highlight_all = 1
+"au FileType python syn keyword pythonDecorator True None False self
+"au FileType python setlocal makeprg=pylint_vim.py\ %
+"au FileType python setlocal efm=%f:%l:\ [%t]%m,%f:%l:%m
+"let ropevim_vim_completion=1
+
+""""""""
+" BUFFERS
+nnoremap <silent> <leader>1 :w<CR>:buffer 1<CR>
+nnoremap <silent> <leader>2 :w<CR>:buffer 2<CR>
+nnoremap <silent> <leader>3 :w<CR>:buffer 3<CR>
+nnoremap <silent> <leader>4 :w<CR>:buffer 4<CR>
+nnoremap <silent> <leader>5 :w<CR>:buffer 5<CR>
+nnoremap <silent> <leader>6 :w<CR>:buffer 6<CR>
+nnoremap <silent> <leader>7 :w<CR>:buffer 7<CR>
+nnoremap <silent> <leader>8 :w<CR>:buffer 8<CR>
+nnoremap <silent> <leader>9 :w<CR>:buffer 9<CR>
+
+
+"Delete trailing white space, useful for Python ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+" Bogdan hates this :)
+"autocmd BufWrite *.py :call DeleteTrailingWS()
+nmap <leader>w :call DeleteTrailingWS()<cr>
+
+""" Quickfix """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <leader>[ :cn<CR>
+nnoremap <silent> <leader>] :cp<CR>
+nnoremap <silent> <leader>m :w<CR>:make<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""'''''''"""
+
+" Extra syntax highlighting
+autocmd BufNewFile,BufRead *.py match Error /^\s*def\s\+\w\+(.*)\s*$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*class\s\+\w\+(.*)\s*$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*for\s.*[^:]$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*except\s*$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*finally\s*$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*try\s*$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*else\s*$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*else\s*[^:].*/
+autocmd BufNewFile,BufRead *.py match Error /^\s*if\s.*[^\:]$/
+autocmd BufNewFile,BufRead *.py match Error /^\s*except\s.*[^\:]$/
+autocmd BufNewFile,BufRead *.py match Error /[;]$/
+autocmd BufNewFile,BufRead *.py match Error /,[^ ]/
+
+set backup " make backup files
+set backupdir=~/.vim_backup " where to put backup files
+
+" python-mode
+let g:pymode_python = 'python'
+let g:pymode_folding = 0
+let g:pymode_motion = 1
+let g:pymode_lint_checkers = ['pylint', 'pep8', 'pyflakes']
+let g:pymode_lint_sort = [ 'F', 'E', 'W', 'C', 'R' ]
+let g:pymode_rope_show_doc_bind = '<C-c>d'
+
+let g:pymode_options = 0
+let g:pymode_doc = 0
+
+setlocal complete+=t
+setlocal formatoptions-=t
+if v:version > 702 && !&relativenumber
+    setlocal nonumber
+endif
+setlocal nowrap 
+setlocal commentstring=#%s
+setlocal define=^\s*\\(def\\\\|class\\)
+
+set nonumber
+

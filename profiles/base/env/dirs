@@ -1,0 +1,16 @@
+# vim:ft=sh
+mkdir -p  ~/work/$PROFILE
+mkdir -p  ~/Documents/$PROFILE
+mkdir -p  ~/log/$PROFILE
+mkdir -p  ~/patches/$PROFILE
+mkdir -p  ~/src/$PROFILE
+mkdir -p  ~/videos/$PROFILE
+mkdir -p  ~/Downloads/
+mkdir -p  ~/Library
+mkdir -p  ~/music
+mkdir -p  ~/pictures
+mkdir -p  ~/torrents
+mkdir -p  ~/.tmux
+
+
+

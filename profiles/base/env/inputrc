@@ -1,0 +1,6 @@
+"\e[5~": history-search-backward
+"\e[6~": history-search-forward
+"\e[3~": delete-char
+";3C": forward-word
+";3D": backward-word
+

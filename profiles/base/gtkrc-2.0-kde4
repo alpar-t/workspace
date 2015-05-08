@@ -1,0 +1,14 @@
+# This file was written by KDE
+# You can edit it in the KDE control center, under "GTK Styles and Fonts"
+
+include "/usr/share/themes/Oxygen-Molecule/gtk-2.0/gtkrc"
+include "/etc/gtk-2.0/gtkrc"
+
+style "user-font"
+{
+	font_name="Liberation Serif"
+}
+widget_class "*" style "user-font"
+
+gtk-theme-name="Oxygen-Molecule"
+gtk-font-name="Liberation Serif 9"

@@ -1,0 +1,71 @@
+#!/bin/bash
+### Proxy-Switcher for KDE
+### Version 0.2 (2006-06-28)
+### Patrick Nagel  (mail AT patrick - nagel DOT net)
+
+function print_help() {
+        echo "Specify proxy as argument:"
+        echo "$0 myproxy.example.com:3128"
+        echo                             
+        echo "or"                        
+        echo                             
+        echo "$0 off        switch off proxy"
+        echo "$0 on         switch on proxy (sets last proxy again)"
+        echo "$0 auto       switch to automatic proxy detection"   
+        exit 0                                                     
+}                 
+
+function set_off() {
+	echo "Proxy OFF"
+        sed -e "s/ProxyType=[0-9]/ProxyType=0/" -i ${CF}
+        return                                         
+}
+
+function set_on() {
+	echo "Proxy ON"
+        sed -e "s/ProxyType=[0-9]/ProxyType=1/" -i ${CF}
+        return                                         
+}                                                      
+
+function set_auto() {
+        sed -e "s/ProxyType=[0-9]/ProxyType=3/" -i ${CF}
+        return                                         
+}
+
+function set_proxy() {
+ 	echo "proxy : $PROXY"
+        sed -e "s/ProxyType=[0-9]/ProxyType=1/" \
+            -e "s/ftpProxy=.*/ftpProxy=http:\/\/${PROXY}/" \
+            -e "s/httpProxy=.*/httpProxy=http:\/\/${PROXY}/" \
+            -e "s/httpsProxy=.*/httpsProxy=http:\/\/${PROXY}/" -i ${CF}
+        return                                                        
+}
+
+function tell_apps() {
+        export DBUS_SESSION_BUS_ADDRESS=`cat /proc/\`pidof kwin\`/environ | tr "\000" "\n" | grep DBUS | sed -e 's/DBUS_SESSION_BUS_ADDRESS=//'`                                               
+        dbus-send --type=signal /KIO/Scheduler org.kde.KIO.Scheduler.reparseSlaveConfiguration string:\"\"
+}
+
+# Main starts here
+CF="${HOME}/.kde4/share/config/kioslaverc"
+
+case "$1" in
+        ("-h" | "--help" | "")
+                print_help
+        ;;
+        ("off")
+                set_off
+        ;;
+        ("on")
+                set_on
+        ;;
+        ("auto")
+                set_auto
+        ;;
+        *)
+                PROXY=$1
+                set_proxy
+        ;;
+esac
+
+tell_apps

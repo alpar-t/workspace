@@ -1,0 +1,40 @@
+source_rc() {
+    if [ -e $HOME/$1 ] ; then 
+		. $HOME/$1
+	else
+		echo Warning: $1 Not found >&2
+	fi
+}
+
+load_profile() {
+    source_rc .bashrc.$1
+}
+
+# make sure the tmpdir exists
+mkdir -p /tmp/$USER
+[ -e ~/tmp ] ||  ln -s /tmp/$USER ~/tmp
+
+###############################################################################
+# source others                                                               #
+###############################################################################
+source_rc .env/bash_functions
+source_rc .env/dirs
+source_rc .env/base 
+source_rc .env/svn
+source_rc .env/vim
+source_rc .env/workarrounds
+source_rc .env/git
+source_rc .env/tmux.common
+
+if tty > /dev/null; then
+	# are we interactive?
+	export INTERACTIVE_TTY=Y
+	source_rc .env/bashDirB
+	source_rc .env/prompt
+	source_rc .env/history
+	source_rc .env/aliases
+	source_rc .env/bashauto
+fi
+
+
+

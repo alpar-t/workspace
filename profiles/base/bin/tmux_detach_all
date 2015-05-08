@@ -1,0 +1,1 @@
+for name in /dev/pts/*; do tmux -S /home/atorok/.tmux/default detach -t $name ; done

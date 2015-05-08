@@ -1,0 +1,14 @@
+#! /bin/bash
+
+url=$1
+
+[ -z "$1" ] && echo "sync what?" && exit 1
+
+if [ -z "$2" ] ; then
+	CUT=1
+else
+	CUT=$2
+fi
+echo $CUT
+wget -m -np -nH --cut-dirs=$CUT $url 
+

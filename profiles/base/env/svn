@@ -1,0 +1,7 @@
+# vim: ft=sh
+# Some of my own
+export SVN_HOST_NAME=svn.sdc.hp.com
+export SVN_URL=https://$SVN_HOST_NAME/rg0201/hpsa-svn
+
+
+

@@ -1,0 +1,17 @@
+#! /bin/bash
+echo SD is $SEARCH_DOMAIN
+if [ "$SEARCH_DOMAIN" == "emea.hpqcorp.net" ] ; then
+   echo "Setting Work proxy"	
+   /home/atorok/bin/kde_proxy proxy.tay.cpqcorp.net:8080
+else
+   echo Proxy OFF
+   /home/atorok/bin/kde_proxy off
+fi
+
+if echo $IP_ADDR | grep -q '^16\.53' ; then
+   echo "Setting Work proxy"	
+   /home/atorok/bin/kde_proxy proxy.tay.cpqcorp.net:8080
+else
+   echo Proxy OFF
+   /home/atorok/bin/kde_proxy off
+fi

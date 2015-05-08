@@ -1,0 +1,12 @@
+# vim: ft=sh
+##############################################################################
+# The environment                                                             #
+###############################################################################
+export PATH=~/bin:$PATH
+export EDITOR=vim   
+export SHELL="/bin/bash"
+export INPUTRC=~/.env/inputrc
+
+export PYTHONPATH=~/lib/python:$PYTHONPATH
+
+[ -z "$TMUX" ] && export TERM=xterm-256color

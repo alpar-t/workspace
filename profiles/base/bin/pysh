@@ -1,0 +1,9 @@
+#!/usr/bin/env python2
+# EASY-INSTALL-ENTRY-SCRIPT: 'bpython==0.9.7.1','console_scripts','bpython'
+__requires__ = 'bpython==0.9.7.1'
+import sys
+sys.path.append("/usr/lib/python2.7/site-packages")
+import bpython
+
+if __name__ == '__main__':
+	sys.exit(bpython.embed())

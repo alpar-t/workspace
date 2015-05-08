@@ -1,0 +1,13 @@
+[user]
+	email = torokalpar@gmail.com
+	name = Alpar Torok
+#[http]
+#	proxy = proxy.tay.cpqcorp.net:8080
+[color]
+	ui = true
+[push]
+    default = matching
+[alias]
+    review = !post-review-git
+[merge]
+	tool = vimdiff

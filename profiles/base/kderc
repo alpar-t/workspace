@@ -1,0 +1,9 @@
+[General]
+activeFont=Liberation Sans,8,-1,5,50,0,0,0,0,0
+desktopFont=Liberation Sans,8,-1,5,50,0,0,0,0,0
+fixed=Liberation Mono,9,-1,5,50,0,0,0,0,0
+font=Liberation Serif,10,-1,5,50,0,0,0,0,0
+menuFont=Liberation Sans,8,-1,5,50,0,0,0,0,0
+smallestReadableFont=Liberation Sans,7,-1,5,50,0,0,0,0,0
+taskbarFont=Liberation Serif,8,-1,5,50,0,0,0,0,0
+toolBarFont=Liberation Sans,7,-1,5,50,0,0,0,0,0

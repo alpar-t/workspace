@@ -1,0 +1,57 @@
+# vim:ft=sh
+pacs() {
+	# search for package and colorize output
+	# parameters passed to pacman -Ss 
+	local CL='\\e['
+	local RS='\\e[0;0m'
+
+	echo -e "$(sudo pacman -Ss "$@" | sed "
+		/^core/		s,.*,${CL}1;31m&${RS},
+		/^extra/	s,.*,${CL}0;32m&${RS},
+		/^community/	s,.*,${CL}1;35m&${RS},
+		/^[^[:space:]]/	s,.*,${CL}0;36m&${RS},
+	")"
+}
+
+safe_mount() {
+	# Only mount the directory if something isn't mounted on it allready
+	# params are passed to mount, the target dir should alays be $2
+	if !  mount | grep -q $2  ; then
+		mkdir -p $2
+		sudo mount $@
+	fi
+}
+
+
+add_path() {
+	if [ -d "${1}" ] ; then
+		if ! echo $PATH | grep -q "${1}" ; then
+			export PATH=$PATH:"${1}"
+		fi
+	fi
+}
+
+radd_path() {
+	if [ -d "${1}" ] ; then
+		if ! echo $PATH | grep -q "${1}" ; then
+			export PATH="${1}":$PATH
+		fi
+	fi
+}
+
+add_python_path() {
+	if [ -d "${1}" ] ; then
+		export PYTHONPATH=$PYTHONPATH:"${1}"
+	fi
+}
+
+# Set window title
+## Courtesy of http://www.kirsle.net/blog/kirsle/set-window-title-in-bash
+function terminator {
+    # PROMPT_COMMAND="echo -ne \"\033]0;$1 (on $HOSTNAME)\007\""
+    PROMPT_COMMAND="echo -ne \"\033]0;  $1 \007\""
+}
+function terminator_ssh {
+    terminator "@@ $@"
+    ssh $@
+}

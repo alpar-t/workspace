@@ -1,0 +1,15 @@
+#!/bin/bash
+CORE=${CORE:-$1}
+
+[ -z $CORE ] && echo "Set CORE env var or pass core address" && exit 1
+
+#if [ -f ~/.ssh/id_rsa.pub ] ; then
+#	key=$(<~/.ssh/id_rsa.pub)
+#fi
+if [ -f ~/.ssh/id_dsa.pub ] ; then
+	key=$(<~/.ssh/id_dsa.pub)
+fi
+[ -z "$key" ] && echo no keyfile && exit 1
+
+echo "Doing it on 22"
+ssh root@$CORE "mkdir -p ~/.ssh && echo \"$key\" >> ~/.ssh/authorized_keys"

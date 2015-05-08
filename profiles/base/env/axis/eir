@@ -1,0 +1,4 @@
+# vim:ft=sh
+export AXIS_SERVER=hel.dev.opsware.com
+export AXIS_HOME=$WORKDIRROOT/SATests/OSBPFramework
+

@@ -1,0 +1,7 @@
+apply plugin: "sa-conventions"
+apply plugin: "legacy"
+
+dependencies {
+
+}
+

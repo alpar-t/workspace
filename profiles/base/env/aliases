@@ -1,0 +1,40 @@
+#vim: ft=sh
+alias m=make
+alias ll='ls -l'
+alias l='ls -l'
+alias ..='cd ..'
+alias ls='ls --color=auto'
+alias vi=vim
+alias python=python2
+alias py=/usr/bin/python2
+# SVN
+alias sup="svn-color up"
+alias supa="svn-color up --set-depth infinity"
+alias st="svn-color status"
+alias sco="svn commit"
+alias sdiff="svn diff --show-copies-as-adds"
+alias sdiffv="svn diff --diff-cmd=svnvimdiff"
+alias sdiffg="svn diff | kompare -o -"
+alias cl="make clean"
+alias rmail="vim /var/mail/$USER"
+
+# general
+alias diff='colordiff'
+alias mkdir='mkdir -v'
+alias cp='cp -v'
+alias rm='rm -v'
+alias mv='mv -v'
+alias df='df -H'
+alias du='du -h'
+
+alias gw='./gradlew'
+alias gwi='./gradlew --info'
+alias gwt='./gradlew tasks'
+
+alias gollum='~/.gem/ruby/2.1.0/bin/gollum --port 8080 --host 127.0.0.1 --allow-uploads page 2> ~/tmp/.gollum.log &'
+
+alias aurget="aurget --noedit --builddir ~/tmp" 
+
+alias grep="grep --color"
+
+alias ssh="terminator_ssh"

@@ -1,0 +1,15 @@
+"2.3.1 (created: 2010/04/07 18:25:13)
+
+nmap w :tabn<Space><Return>
+nmap q :tabp<Space><Return>
+nmap <C-1> :tabn<Space>1<Space><Return>
+nmap <C-2> :tabn<Space>2<Space><Return>
+nmap <C-3> :tabn<Space>3<Space><Return>
+nmap <C-4> :tabn<Space>4<Space><Return>
+
+" Disable F1 help
+map <F1> <Nop>
+
+set runtimepath=/home/atorok/.vimperator
+
+" vim:ft=vim

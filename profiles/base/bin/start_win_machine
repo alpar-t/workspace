@@ -1,0 +1,55 @@
+#! /bin/bash
+#
+# Make sure we have a brdige
+#
+
+sudo modprobe kvm_intel
+TAP=win0
+BR=br0
+
+sudo sysctl net.ipv4.ip_forward=1
+
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo iptables -A FORWARD -i br0 -o eth0 -j ACCEPT
+sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+
+ifconfig -a | grep -q $BR
+if [ $? != 0 ]; then
+	echo "Creating bridge"
+	sudo brctl addbr $BR
+    sudo ifconfig $BR 10.10.10.1 netmask 255.255.255.0
+fi
+#
+# create a tap
+#
+ifconfig -a | grep -q  $TAP
+if [ $? != 0 ] ; then
+	echo "Creating TAP"
+	sudo ip tuntap add dev $TAP mode tap user $USER
+	sudo brctl addif $BR $TAP 
+	sudo ifconfig $TAP up
+fi
+
+USB_BUS=`lsusb | grep 'Plantronics, Inc.' | cut -d' ' -f 2`
+USB_DEVICE=`lsusb | grep 'Plantronics, Inc.' | cut -d' ' -f 4 | sed -e s/://`
+
+echo $USB_BUS $USB_DEVICE
+
+echo sudo chown $USER /dev/bus/usb/$USB_BUS/$USB_DEVICE
+sudo chown $USER /dev/bus/usb/$USB_BUS/$USB_DEVICE
+
+# start the machine
+QEMU_AUDIO_DRV=pa qemu-system-x86_64  --enable-kvm \
+	-m 1G -smp 2 \
+	-cpu host \
+	-drive file=~/gTeam_work/windows.raw \
+	-net tap,ifname=$TAP -net nic,model=e1000 \
+	-device usb-host,hostbus=$USB_BUS,hostaddr=$USB_DEVICE \
+    -usb &
+	#-monitor stdio \
+    #-vnc :1 \
+	#-soundhw hda -device hda-duplex -device hda-micro \
+
+sleep 30
+
+xfreerdp -T Local -g 1280x1024 -u admin -p admin   -x b  --plugin cliprdr -0 -o  10.10.10.10 || sudo sysctl net.ipv4.ip_forward=0 &

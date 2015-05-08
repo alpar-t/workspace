@@ -1,0 +1,19 @@
+# vim:ft=sh
+
+#
+# Start/Recover tmux sessions
+#
+
+. ~/.env/tmux.common
+
+
+# only if we have tmux, and we are not allready in a tmux sesison
+if [ -z "$TMUX" -a -n `which tmux 2> /dev/null` ] ; then 
+    # get the last session
+	S=`$TMUX_CMD list-sessions  | grep -v '(attached)$' | head -n 1 | cut -d: -f1`
+	if [ -z "$S" ] ; then
+		$TMUX_CMD
+	else
+	    $TMUX_CMD $TMUX_CMDOPTS  attach -t $S
+	fi
+fi

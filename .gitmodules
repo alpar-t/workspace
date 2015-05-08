@@ -1,0 +1,30 @@
+[submodule "shellib"]
+	path = shellib
+	url = https://github.com/maxtsepkov/bash_colors.git
+[submodule "profiles/base/vim/bundle/python-mode"]
+	path = profiles/base/vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "profiles/base/vim/bundle/vim-gradle"]
+	path = profiles/base/vim/bundle/vim-gradle
+	url = https://github.com/tfnico/vim-gradle.git
+[submodule "profiles/base/vim/bundle/Windows-PowerShell-Syntax-Plugin"]
+	path = profiles/base/vim/bundle/Windows-PowerShell-Syntax-Plugin
+	url = https://github.com/vim-scripts/Windows-PowerShell-Syntax-Plugin.git
+[submodule "profiles/base/vim/bundle/vcscommand.vim"]
+	path = profiles/base/vim/bundle/vcscommand.vim
+	url = https://github.com/vim-scripts/vcscommand.vim.git
+[submodule "profiles/base/vim/bundle/confluencewiki.vim"]
+	path = profiles/base/vim/bundle/confluencewiki.vim
+	url = https://github.com/vim-scripts/confluencewiki.vim.git
+[submodule "profiles/base/vim/bundle/vim-notes"]
+	path = profiles/base/vim/bundle/vim-notes
+	url = https://github.com/xolox/vim-notes.git
+[submodule "profiles/base/vim/bundle/vim-misc"]
+	path = profiles/base/vim/bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git
+[submodule "profiles/base/vim/bundle/tabular"]
+	path = profiles/base/vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "profiles/base/vim/bundle/vim-markdown"]
+	path = profiles/base/vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git

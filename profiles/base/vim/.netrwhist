@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/atorok/work/hpsa/trunk/osprov/os_build_plan_content/build'
+let g:netrw_dirhist_2='/home/atorok/work/hpsa/trunk/osprov/dud_udpate_installer/installer'
+let g:netrw_dirhist_3='/home/atorok/work/hpsa/trunk/osprov/devtools/axis'
+let g:netrw_dirhist_4='/home/atorok/work/hpsa/releases/altair/bootagent/pxeboot/oi_patch_scripts'
+let g:netrw_dirhist_5='/home/atorok/work/hpsa/trunk/osprov/devtools/axis'
+let g:netrw_dirhist_6='/home/atorok/work/hpsa_work/SvnRepo/trunk/osprov/devtools/axis'
+let g:netrw_dirhist_7='/home/atorok/work/hpsa_work/Presentations/axis_osprov_session2'
+let g:netrw_dirhist_8='/home/atorok/work/3rdparty/mikidown/mikidown'

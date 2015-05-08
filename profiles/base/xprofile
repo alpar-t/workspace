@@ -1,0 +1,5 @@
+xrandr --dpi 124
+/home/alpar/bin/dspsetup
+compton -CGb
+start-pulseaudio-x11
+

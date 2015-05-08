@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ -z "$A" ] ; then
+    echo 'Address is mandatory (pass in $A)'
+    exit 1
+fi
+if [ -z "$P" ] ; then
+    echo 'Password is mandatory (pass in $P)'
+    exit 1
+fi
+if [ -z "$N" ] ; then
+    N=$A
+fi
+if [ -z "$U" ] ; then
+    U="Administrator"
+fi
+echo "Starting RDP connection running in the background"
+xfreerdp -T $N --ignore-certificate -g 1280x1024 -D -a 24 -u $U -p $P -K -z -x l --plugin cliprdr $A >> ~/tmp/.rdpw.log &

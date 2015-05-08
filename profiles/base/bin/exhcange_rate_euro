@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$1" != "--silent" ] ; then 
+   echo BNR , RZB
+fi
+wget -O - http://www.raiffeisen.ro/curs-valutar 2> /dev/null | grep -A 5 "<td align=\"center\">EUR</td>" | tail -n 5 | sed  "s/<[^<]\+>\([0-9.]\+\).*/\1/" | xargs echo | cut -d" " -f1,5
+
+

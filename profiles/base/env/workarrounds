@@ -1,0 +1,6 @@
+# vim: ft=sh
+
+#
+# Needed for Pidgin Office Communicator plugin
+# Update: No longer needed with latest version
+# export NSS_SSL_CBC_RANDOM_IV=0

@@ -1,0 +1,6 @@
+"/home/alpar/bin/dspsetup -l docked"
+    m:0x40 + c:40
+    Mod4 + d
+"/home/alpar/bin/dspsetup -l mobile"
+    m:0x40 + c:40
+    Mod4 + m

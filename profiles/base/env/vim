@@ -1,0 +1,3 @@
+# vim:ft=sh
+mkdir -p  ~/.vim_undodir
+mkdir -p  ~/.vim_backup
