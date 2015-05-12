@@ -178,3 +178,6 @@ setlocal define=^\s*\\(def\\\\|class\\)
 
 set nonumber
 
+""" Easier to use in a GUI ... adds CTRL+{C,v,x,a} etc """
+source $VIMRUNTIME/mswin.vim
+behave mswin
