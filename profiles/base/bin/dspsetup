@@ -1,2 +1,2 @@
 #!/bin/bash
-autorandr -c --force
+autorandr -c --force $@
