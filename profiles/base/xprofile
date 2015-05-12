@@ -1,5 +1,3 @@
-xrandr --dpi 124
-/home/alpar/bin/dspsetup
-compton -CGb
+compton --config ~/.compton.conf
 start-pulseaudio-x11
-
+xrandr --dpi 157
