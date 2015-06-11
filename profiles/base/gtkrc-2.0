@@ -1,6 +1,5 @@
 # -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
 include "/usr/share/themes/QtCurve/gtk-2.0/gtkrc"
-
-include "/home/atorok/.gtkrc-2.0-kde4"
+include "/home/alpar/.gtkrc-2.0-kde4"
 
 # -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
