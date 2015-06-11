@@ -179,5 +179,16 @@ setlocal define=^\s*\\(def\\\\|class\\)
 set nonumber
 
 """ Easier to use in a GUI ... adds CTRL+{C,v,x,a} etc """
-source $VIMRUNTIME/mswin.vim
-behave mswin
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+" CTRL-V and SHIFT-Insert are Paste
+map <S-Insert>        "+gP
+
+set visualbell t_vb=
+set noerrorbells visualbell t_vb=
+
+if has('gui_running')
+    set guifont=Liberation\ Mono\ 14
+endif

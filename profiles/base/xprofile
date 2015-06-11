@@ -1,3 +1,4 @@
-compton --config ~/.compton.conf
-start-pulseaudio-x11
 xrandr --dpi 157
+compton --config ~/.compton.conf
+sleep 5
+start-pulseaudio-x11
