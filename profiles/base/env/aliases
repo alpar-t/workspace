@@ -37,4 +37,3 @@ alias aurget="aurget --noedit --builddir ~/tmp"
 
 alias grep="grep --color"
 
-alias ssh="terminator_ssh"

@@ -45,13 +45,3 @@ add_python_path() {
 	fi
 }
 
-# Set window title
-## Courtesy of http://www.kirsle.net/blog/kirsle/set-window-title-in-bash
-function terminator {
-    # PROMPT_COMMAND="echo -ne \"\033]0;$1 (on $HOSTNAME)\007\""
-    PROMPT_COMMAND="echo -ne \"\033]0;  $1 \007\""
-}
-function terminator_ssh {
-    terminator "@@ $@"
-    ssh $@
-}
