@@ -1,2 +1,6 @@
 #!/bin/bash
+# Turn up this external display first, as a workaround. 
+# This doesn't come back aftter a sleep unless truned off first
+xrandr --output DP2-3 --off
 autorandr -c --force $@
+
