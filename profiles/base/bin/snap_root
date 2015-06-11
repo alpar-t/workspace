@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SYSTEM_ROOT=${1:-arch_root}
-SYSTEM_BACKUP=${2:-/arch_backup}
+SYSTEM_ROOT=${1:-root}
+SYSTEM_BACKUP=${2:-/backup}
 
 sudo lvremove  /dev/system/$SYSTEM_BACKUP
 sudo lvcreate --size 20G --snapshot \
