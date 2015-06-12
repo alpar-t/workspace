@@ -70,7 +70,7 @@ bash_prompt() {
 	trap 'echo -ne "\e[0m"' DEBUG
 }
 
-PROMPT_COMMAND="bash_prompt_command 2> /dev/null; $PROMPT_COMMAND"
+PROMPT_COMMAND="bash_prompt_command 2> /dev/null"
 bash_prompt
 unset bash_prompt
 
