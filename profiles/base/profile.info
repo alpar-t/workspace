@@ -28,6 +28,7 @@ DOTMODULES="
     vim_undodir
     xserverrc
     xinitrc
+    compton.conf
 "
 
 MODULES="
