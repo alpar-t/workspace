@@ -14,4 +14,25 @@ if [ -z "$U" ] ; then
     U="Administrator"
 fi
 echo "Starting RDP connection running in the background"
-xfreerdp -T $N --ignore-certificate -g 1280x1024 -D -a 24 -u $U -p $P -K -z -x l --plugin cliprdr $A >> ~/tmp/.rdpw.log &
+set -x
+xfreerdp \
+    /t:$N \
+    /cert-ignore \
+    /size:1280x1024 \
+    /bpp:24 \
+    +compression \
+    /network:lan \
+    +clipboard \
+    +fonts \
+    -themes \
+    -wallpaper \
+    -grab-keyboard \
+    /drive:linkback:~/tmp \
+    /v:$A  \
+    /u:$U \
+    /sec:rdp \
+    /p:$P
+
+
+
+
