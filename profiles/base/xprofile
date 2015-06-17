@@ -1,4 +1,6 @@
-xrandr --dpi 157
-compton --config ~/.compton.conf
-sleep 5
 start-pulseaudio-x11
+xrandr --dpi 157
+xrandr --output DP-1 --mode 3840x2160 --right-of DVI-I-0 --primary
+xsetroot -solid '#000000'
+compton -b --config ~/.compton.conf
+sudo openvpn ~/.devfactory.ovpn

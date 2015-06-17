@@ -93,6 +93,7 @@ set $w8 workspace 8
 set $w9 workspace 9
 set $w10 workspace 10
 
+workspace 9 output DVI-I-0
 
 # switch to workspace
 bindsym XF86HomePage  $w1
@@ -133,14 +134,12 @@ bar {
     position top
 
     status_command i3status --config ~/.i3/i3status.conf
-    # use patched i3status
-    #status_command ~/src/i3status/i3status --config ~/.i3/i3status.conf
-    #status_command ~/.i3/i3-conky-initscript.sh
 
 }
 
 assign [class="skype"]    1
-assign [class="xfreerdp"] 2
+assign [class="glances"]    9
+assign [class="xfreerdp"] 9
 for_window [class="xfreerdp"]  floating disable
 
 # reload the configuration file
@@ -177,8 +176,9 @@ bindsym $mod+r mode "resize"
 
 mode "power" {
     bindsym s exec --no-startup-id sudo systemctl suspend
-    bindsym s exec --no-startup-id sudo systemctl r
+    bindsym r exec --no-startup-id sudo systemctl reboot
     bindsym h exec --no-startup-id sudo systemctl hibernate
+    bindsym p exec --no-startup-id sudo systemctl poweroff
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -186,18 +186,19 @@ mode "power" {
 bindsym $mod+p mode "power"
 
 
-# Dim screen after 10 minutes
-exec --no-startup-id xset dpms 600
+# Dim screen after 15 minutes
+exec --no-startup-id xset dpms 900
 # Configure the keyboard
 exec --no-startup-id  xset r rate 200 30
 # The clipboard ..
 exec --no-startup-id anamnesis --start
+# start system monitor
+exec --no-startup-id glances
+
 bindsym $mod+k exec "anamnesis -b"
 # Load the workspace
 bindsym $mod+i exec --no-startup-id  "$HOME/bin/init_i3.sh"
 bindsym $mod+Shift+i exec --no-startup-id  "$HOME/bin/dspsetup"
-# start nm-applet for network manager
-exec --no-startup-id nm-applet
 
 
 for_window [title="anamnesis"] floating enable
