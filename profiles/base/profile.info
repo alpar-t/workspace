@@ -29,6 +29,7 @@ DOTMODULES="
     xserverrc
     xinitrc
     compton.conf
+    Xresources
 "
 
 MODULES="

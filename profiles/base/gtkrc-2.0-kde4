@@ -6,9 +6,9 @@ include "/etc/gtk-2.0/gtkrc"
 
 style "user-font"
 {
-	font_name="Liberation Serif 10"  
+	font_name="Liberation Serif 14"  
 }
 widget_class "*" style "user-font"
 
 gtk-theme-name="Orion"
-gtk-font-name="Liberation Serif 10"
+gtk-font-name="Liberation Serif 12"
