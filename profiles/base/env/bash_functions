@@ -16,7 +16,7 @@ pacs() {
 safe_mount() {
 	# Only mount the directory if something isn't mounted on it allready
 	# params are passed to mount, the target dir should alays be $2
-	if !  mount | grep -q $2  ; then
+    if !  ( mount | grep -q $2 )  ; then
 		mkdir -p $2
 		sudo mount $@
 	fi
