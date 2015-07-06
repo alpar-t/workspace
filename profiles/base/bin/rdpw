@@ -14,7 +14,6 @@ if [ -z "$U" ] ; then
     U="Administrator"
 fi
 echo "Starting RDP connection running in the background"
-set -x
 xfreerdp \
     /t:$N \
     /cert-ignore \
@@ -31,7 +30,7 @@ xfreerdp \
     /v:$A  \
     /u:$U \
     /sec:rdp \
-    /p:$P
+    /p:$P >> ~/tmp/.rdpw.log &
 
 
 
