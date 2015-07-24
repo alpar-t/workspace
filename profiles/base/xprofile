@@ -1,3 +1,4 @@
+xset dpms 900
 xrandr --dpi 157
 xrandr --output DP-1 --mode 3840x2160 --left-of DVI-I-0 --primary
 xsetroot -solid '#000000'
@@ -6,3 +7,4 @@ sudo openvpn ~/.devfactory.ovpn
 start-pulseaudio-x11
 setxkbmap -option ctrl:nocaps
 xrdb -merge ~/.Xresources
+
