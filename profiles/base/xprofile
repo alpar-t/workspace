@@ -8,3 +8,4 @@ start-pulseaudio-x11
 setxkbmap -option ctrl:nocaps
 xrdb -merge ~/.Xresources
 
+test -f ~/.xprofile.local &&  source ~/.xprofile.local
