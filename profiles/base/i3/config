@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Liberation Sans 9
+font pango:Liberation Sans 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -30,7 +30,7 @@ font pango:Liberation Sans 9
 floating_modifier $mod
 
 #### Default apps 
-bindsym $mod+Return exec konsole --workdir=`xcwd`
+bindsym $mod+Return exec xfce4-terminal --working-directory==`xcwd`
 bindsym $mod+0x5c exec thunar `xcwd`
 
 # kill focused window
@@ -137,11 +137,6 @@ bar {
 
 }
 
-assign [class="skype"]    1
-assign [class="glances"]    9
-assign [class="xfreerdp"] 9
-for_window [class="xfreerdp"]  floating disable
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -198,6 +193,18 @@ bindsym $mod+k exec "anamnesis -b"
 bindsym $mod+i exec --no-startup-id  "$HOME/bin/init_i3.sh"
 bindsym $mod+Shift+i exec --no-startup-id  "$HOME/bin/dspsetup"
 
+# Application control rules 
 
 for_window [title="anamnesis"] floating enable
 for_window [class="kcalc"] floating enable
+for_window [class="pavucontrol"] floating enable
+for_window [class="xfreerdp"]  floating disable
+for_window [class="HipChat"]  floating disable
+
+assign [class="skype"]    1
+assign [class="Skype"]    1
+assign [class="xfreerdp"] 9
+assign [class="jetbrains-idea-ce"]  2
+assign [class="Pidgin"]  8
+
+
