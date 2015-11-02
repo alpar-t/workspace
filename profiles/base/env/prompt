@@ -65,9 +65,13 @@ bash_prompt() {
         GIT_PROMPT='$(__git_ps1 "(%s)")'
     fi  
 
-    PS1="${EMK}[${UC}\h:${EMB}\${NEW_PWD}${EMK}${GIT_PROMPT}]${UC}\\$ ${Y}"
+    PS1_CANDIDATE="${EMK}[${UC}\h:${B}\${NEW_PWD}${EMK}${GIT_PROMPT}]${UC}\\$ ${Y}"
+    TITLEBAR="\[\033]0;\h:\${NEW_PWD}   \007\]"
+
+    PS1="$TITLEBAR$PS1_CANDIDATE"
+
     # extra backslash in front of \$ to make bash colorize the prompt
-	trap 'echo -ne "\e[0m"' DEBUG
+	trap 'echo -ne "\e[0m"; echo -e "\e]0;"; echo -n $BASH_COMMAND; echo -ne "\007"' DEBUG
 }
 
 PROMPT_COMMAND="bash_prompt_command 2> /dev/null"
