@@ -1,0 +1,5 @@
+#xset dpms 600 1200 3600
+xset -dpms
+xrandr --output DP-1 --mode 3840x2160 -r 30 --primary
+sudo openvpn ~/.devfactory.ovpn
+
