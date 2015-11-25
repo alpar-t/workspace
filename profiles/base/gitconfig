@@ -9,5 +9,6 @@
     default = matching
 [alias]
     review = !post-review-git
+	forcepush = push -u origin --force HEAD
 [merge]
 	tool = vimdiff
