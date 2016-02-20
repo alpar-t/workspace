@@ -4,6 +4,7 @@ xsetroot -solid '#000000'
 compton -b --config ~/.compton.conf
 start-pulseaudio-x11
 setxkbmap -option ctrl:nocaps
-xrdb -merge ~/.Xresources
+xrdb -merge ~/.Xresource
+xbindkeys
 
 test -f ~/.xprofile.local &&  source ~/.xprofile.local

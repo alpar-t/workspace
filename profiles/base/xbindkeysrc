@@ -1,6 +1,11 @@
-"/home/alpar/bin/dspsetup -l docked"
-    m:0x40 + c:40
-    Mod4 + d
-"/home/alpar/bin/dspsetup -l mobile"
-    m:0x40 + c:40
-    Mod4 + m
+"sleep 1 && xdotool key XF86AudioNext"
+    m:0x40 + c:60
+    Mod4 + period
+
+"sleep 1 && xdotool key XF86AudioPrev"
+    m:0x40 + c:59
+    Mod4 + comma
+
+"sleep 1 && xdotool key XF86AudioPlay"
+    m:0x40 + c:61
+    Mod4 + slash
