@@ -184,6 +184,8 @@ bindsym $mod+p mode "power"
 # Configure the keyboard
 exec --no-startup-id  xset r rate 200 30
 # The clipboard ..
+#  clean up the pid file, often it doesn't start because someone else is running there
+exec rm /home/alpar/.local/share/anamnesis/anamnesis.pid
 exec --no-startup-id anamnesis --start
 # start system monitor
 exec --no-startup-id glances
