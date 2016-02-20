@@ -1,0 +1,19 @@
+# vim: set ft=sh
+source_rc() {
+    if [ -e $HOME/$1 ] ; then 
+		. $HOME/$1
+	else
+		echo Warning: $1 Not found >&2
+	fi
+}
+
+load_profile() {
+    source_rc .bashrc.$1
+}
+
+# make sure the tmpdir exists
+mkdir -p /tmp/$USER
+[ -e ~/tmp ] ||  ln -s /tmp/$USER ~/tmp
+
+source_rc .liquidprompt/liquidprompt
+

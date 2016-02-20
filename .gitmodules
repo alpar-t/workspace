@@ -26,5 +26,5 @@
 	path = profiles/base/vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "liquidprompt"]
-	path = liquidprompt
+	path = profiles/base/liquidprompt
 	url = https://github.com/nojhan/liquidprompt.git

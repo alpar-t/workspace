@@ -30,6 +30,7 @@ DOTMODULES="
     xinitrc
     compton.conf
     Xresources
+    liquidprompt
 "
 
 MODULES="
@@ -39,6 +40,7 @@ MODULES="
 PREFIXED_DOTMODULES="
     bashrc
     zshrc
+    allshesllsrc
 "
 
 PREFIXED_MODULES="
