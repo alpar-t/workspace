@@ -1,14 +1,16 @@
 [user]
-	email = torokalpar@gmail.com
+	email = alpar.torok@devfactory.com
 	name = Alpar Torok
 #[http]
 #	proxy = proxy.tay.cpqcorp.net:8080
 [color]
 	ui = true
 [push]
-    default = matching
+	default = upstream
 [alias]
     review = !post-review-git
 	forcepush = push -u origin --force HEAD
 [merge]
 	tool = vimdiff
+[core]
+	askpass = /usr/bin/ksshaskpass
