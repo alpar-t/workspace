@@ -1,0 +1,15 @@
+#!/bin/bash
+NAME_PREFIX="bash"
+
+DOTMODULES="
+"
+
+MODULES="
+"
+
+PREFIXED_DOTMODULES="
+"
+
+PREFIXED_MODULES="
+"
+
