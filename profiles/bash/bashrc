@@ -8,9 +8,7 @@ source ~/.allshesllsrc.base
 source_rc .env/bash_functions
 source_rc .env/dirs
 source_rc .env/base 
-source_rc .env/svn
 source_rc .env/vim
-source_rc .env/workarrounds
 source_rc .env/git
 source_rc .env/tmux.common
 
@@ -23,5 +21,5 @@ if tty > /dev/null; then
 	source_rc .env/bashauto
 fi
 
-
+source_rc .liquidprompt/liquidprompt
 

@@ -8,6 +8,7 @@ MODULES="
 "
 
 PREFIXED_DOTMODULES="
+    bashrc
 "
 
 PREFIXED_MODULES="

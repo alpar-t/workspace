@@ -59,7 +59,9 @@ install_profile() {
 }
 
 if [ -z "$1" ] ; then
-   install_profile "base"
+   install_profile "base" 
+   install_profile "zsh" 
+   install_profile "bash"
 else
    install_profile "$1"
 fi

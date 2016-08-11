@@ -1,5 +1,18 @@
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+if ! [ -f  ~/.allshesllsrc.base ] ; then echo "No such file: ~/.allshesllsrc.base" ; fi
+source ~/.allshesllsrc.base
+
+
+# TODO: Rename
+source_rc .env/bash_functions
+source_rc .env/dirs
+source_rc .env/base 
+source_rc .env/vim
+source_rc .env/git
+source_rc .env/tmux.common
+
+if tty > /dev/null; then
+	source_rc .env/aliases
+fi
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
@@ -29,7 +42,6 @@ key[PageDown]=${terminfo[knp]}
 # TODO Arch packages
 
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-. /usr/share/git/completion/git-completion.zsh
 . ~/.liquidprompt/liquidprompt.plugin.zsh
 
 

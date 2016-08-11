@@ -1,5 +1,5 @@
 #!/bin/bash
-NAME_PREFIX="base"
+NAME_PREFIX="zsh"
 
 DOTMODULES="
 "
