@@ -39,7 +39,6 @@ MODULES="
 "
 
 PREFIXED_DOTMODULES="
-    bashrc
     zshrc
     allshesllsrc
 "

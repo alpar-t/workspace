@@ -18,7 +18,6 @@ if tty > /dev/null; then
 	# are we interactive?
 	export INTERACTIVE_TTY=Y
 	source_rc .env/bashDirB
-	#source_rc .env/prompt
 	source_rc .env/history
 	source_rc .env/aliases
 	source_rc .env/bashauto

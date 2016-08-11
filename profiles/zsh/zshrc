@@ -1,3 +1,6 @@
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
@@ -25,6 +28,28 @@ key[PageDown]=${terminfo[knp]}
 
 # TODO Arch packages
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/git/completion/git-completion.zsh
+. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. /usr/share/git/completion/git-completion.zsh
+. ~/.liquidprompt/liquidprompt.plugin.zsh
+
+
+setopt noautomenu
+setopt nomenucomplete
+#setopt +o menucomplete
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/alpar/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+bindkey "${key[PageUp]}" history-beginning-search-backward
+bindkey "${key[PageDown]}" history-beginning-search-forward
 

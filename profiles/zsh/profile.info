@@ -1,0 +1,16 @@
+#!/bin/bash
+NAME_PREFIX="base"
+
+DOTMODULES="
+"
+
+MODULES="
+"
+
+PREFIXED_DOTMODULES="
+    zshrc
+"
+
+PREFIXED_MODULES="
+"
+
