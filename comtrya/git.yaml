@@ -8,6 +8,9 @@ actions:
   - action: file.link
     from: gpg.conf
     to: {{ user.home_dir }}/.gnupg/gpg.conf
+  - action: file.link
+    from: gpg-agent.conf
+    to: {{ user.home_dir }}/.gnupg/gpg-agent.conf
   - action: package.install
     name: git
   - action: package.install
