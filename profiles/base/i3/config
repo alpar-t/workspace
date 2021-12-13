@@ -36,7 +36,7 @@ exec --no-startup-id  "$HOME/bin/init_i3.sh"
 bindsym $mod+Return exec xfce4-terminal --working-directory `xcwd` --command="zsh"
 bindsym $mod+0x5c exec thunar `xcwd`
 
-bindsym $mod+c exec "gcalcli --calendar=alpar.torok@elastic.co agenda --tsv --details description $(date -Id) $(date -Id --date tomorrow) | awk -F'\t' '{ if (match($6, /https?(:\/\/[A-Za-z0-9.-]*zoom[.]us[^ \"<\\]+)/, m)) { print $5 \"\tzoommtg\" m[1] } }' | column -ts $'\t' -o $'\t' | rofi -dmenu -i -mesg 'Open an upcoming Zoom meeting' | awk -F'\t' '{ print $NF; }' | xargs xdg-open"
+bindsym $mod+c exec ~/bin/calendar-menu.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill

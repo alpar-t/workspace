@@ -9,10 +9,6 @@ picom -b
 
 xset r rate 200 30
 
-if [ "$WE_ARE_DOCKED" == "1" ] ; then
-    intel-virtual-output
-    xrandr --output VIRTUAL1 --auto
-fi
 
 xbindkeys
 

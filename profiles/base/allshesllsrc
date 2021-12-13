@@ -14,3 +14,8 @@ load_profile() {
 # make sure the tmpdir exists
 mkdir -p /tmp/$USER
 [ -e ~/tmp ] ||  ln -s /tmp/$USER ~/tmp
+
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi

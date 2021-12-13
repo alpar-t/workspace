@@ -29,7 +29,7 @@ NAME=alpar-ci-$IMAGE-`date +%m%d-%H%M`
 gcloud beta compute \
    --project=elastic-elasticsearch \
    instances create $NAME \
-    --zone=us-central1-b \
+    --zone=us-central1-a \
     $SIZE \
     --subnet=default --network-tier=PREMIUM \
     --no-restart-on-failure --maintenance-policy=TERMINATE \
