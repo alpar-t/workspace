@@ -1,0 +1,19 @@
+actions:
+- action: package.install
+  name: jq
+- action: package.install
+  name: docker-compose
+- action: package.install
+  name: subversion
+- action: package.install
+  name: bitwarden-cli
+- action: package.install
+  name: wget
+
+# Add common packages here
+#
+#- action: package.install
+#  name:
+#  variants:
+#    macOS:
+#      name: kubernetes-cli

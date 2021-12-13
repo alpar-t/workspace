@@ -1,0 +1,6 @@
+depends:
+- packages_common
+- packages_brew
+- liquidprompt
+- zsh
+- git

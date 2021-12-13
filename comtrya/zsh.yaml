@@ -1,0 +1,10 @@
+actions:
+  - action: file.link
+    from: zprofile
+    to: {{ user.home_dir }}/.zprofile
+  - action: file.link
+    from: xterm-256color-apple-darwin21.0
+    to: {{ user.home_dir }}/.zkbd/xterm-256color-apple-darwin21.0
+  - action: file.link
+    from: key_bindigs.zprofile
+    to: {{ user.home_dir }}/.zprofile.d/key_bindings.zprofile

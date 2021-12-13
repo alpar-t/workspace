@@ -1,0 +1,10 @@
+actions:
+  - action: command.run
+    dir: .
+    command: ./git_clone_or_update.sh
+    args:
+      - {{ user.home_dir }}/.config/zprezto
+      - https://github.com/sorin-ionescu/prezto.git
+  - action: file.link
+    from: zprezto.zprofile
+    to: {{ user.home_dir }}/.zprofile.d/zprezto.zprofile

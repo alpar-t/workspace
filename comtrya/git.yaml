@@ -1,0 +1,21 @@
+# Includes set-up of signing commits with keybase keys
+#  See:
+#   https://stephenreescarter.net/signing-git-commits-with-a-keybase-gpg-key/
+actions:
+  - action: file.link
+    from: gitconfig
+    to: {{ user.home_dir }}/.gitconfig
+  - action: file.link
+    from: gpg.conf
+    to: {{ user.home_dir }}/.gnupg/gpg.conf
+  - action: package.install
+    name: git
+  - action: package.install
+    name: gpg2
+  - action: package.install
+    name: gnupg
+  - action: package.install
+    name: pinentry-mac
+  - action: package.install
+    name: keybase
+

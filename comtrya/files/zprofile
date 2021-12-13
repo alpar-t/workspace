@@ -1,0 +1,54 @@
+export OS=`uname -s`
+
+if [ $OS = "Darwin" ] ; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+ssh-add -q
+if [ -f ~/.ssh/google_compute_engine ] ; then
+    ssh-add -q ~/.ssh/google_compute_engine
+fi
+if [ -f ~/.ssh/id_rsa_elastic ] ; then
+    ssh-add -q ~/.ssh/id_rsa_elastic
+fi
+if [ -f ~/.ssh/id_rsa_github ] ; then
+    ssh-add -q ~/.ssh/id_rsa_github
+fi
+
+
+autoload -Uz compinit
+
+export PATH=~/bin:$PATH
+
+# make sure the tmpdir exists
+mkdir -p /tmp/$USER
+[ -e ~/tmp ] ||  ln -s /tmp/$USER ~/tmp
+
+# required for GPG Signing
+export GPG_TTY=$(tty)
+
+gradlew() {
+   local loc=$PWD
+   while ! [ -x $loc/gradlew ] ; do
+       if [ -d $loc/.git ] ; then
+           break;
+       fi
+       loc="$loc/.." ;
+   done ;
+   if [ -x $loc/gradlew  ] ; then
+       $loc/gradlew $@
+   else
+       echo "No Gradle Wrapper"
+   fi
+}
+
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+
+# Save the history
+export PROMPT_COMMAND="history -a;   $PROMPT_COMMAND"
+
+source ~/.zprofile.d/*.zprofile
+
+

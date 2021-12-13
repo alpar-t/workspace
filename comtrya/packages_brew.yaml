@@ -1,0 +1,37 @@
+actions:
+  - action: package.install
+    provider: homebrew
+    name: darktable
+  - action: package.install
+    provider: homebrew
+    name: docker-completion
+  - action: package.install
+    provider: homebrew
+    name: coreutils
+  - action: package.install
+    provider: homebrew
+    name: docker
+  - action: package.install
+    provider: homebrew
+    name: font-fira-mono
+  - action: package.install
+    provider: homebrew
+    name: font-fira-mono
+  - action: package.install
+    provider: homebrew
+    name: font-fira-sans
+  - action: package.install
+    provider: homebrew
+    name: intellij-idea
+  - action: package.install
+    provider: homebrew
+    name: joplin
+  - action: package.install
+    provider: homebrew
+    name: font-fira-code
+  - action: package.install
+    provider: homebrew
+    name: google-cloud-sdk
+  - action: package.install
+    provider: homebrew
+    name: nextcloud

@@ -1,0 +1,14 @@
+actions:
+  - action: command.run
+    dir: .
+    command: ./git_clone_or_update.sh
+    args:
+      - {{ user.home_dir }}/.config/liquidprompt
+      - https://github.com/nojhan/liquidprompt.git
+  - action: file.link
+    from: liquidprompt.zprofile
+    to: {{ user.home_dir }}/.zprofile.d/liquidprompt.zprofile
+  - action: file.link
+    from: liquidpromptrc
+    to: {{ user.home_dir }}/.config/liquidpromptrc
+
