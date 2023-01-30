@@ -24,17 +24,15 @@ if ! [ -z "$2" ] ; then
     esac
 fi
 
-NAME=alpar-ci-$IMAGE-`date +%m%d-%H%M`
+NAME=alpar-ci-$IMAGE
 
 gcloud beta compute \
-   --project=elastic-elasticsearch \
+   --project=elastic-cloud-dev \
    instances create $NAME \
     --zone=us-central1-a \
     $SIZE \
     --subnet=default --network-tier=PREMIUM \
     --no-restart-on-failure --maintenance-policy=TERMINATE \
-    --service-account=660162717451-compute@developer.gserviceaccount.com \
-    --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
    --image-family=elastic-$KIND-$IMAGE \
    --image-project=elastic-images-prod \
    --boot-disk-size=350GB --boot-disk-type=pd-ssd \
