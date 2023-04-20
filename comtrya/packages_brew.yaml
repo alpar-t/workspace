@@ -35,3 +35,6 @@ actions:
   - action: package.install
     provider: homebrew
     name: nextcloud
+  - action: package.install
+    provider: homebrew
+    name: findutils
