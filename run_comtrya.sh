@@ -22,4 +22,4 @@ if ! command -v comtrya &> /dev/null; then
 fi
 
 # Run comtrya apply in the comtrya directory
-$REPO_DIR/comtrya apply  comtrya/osx.yaml
+$REPO_DIR/comtrya-aarch64-apple-darwin apply comtrya/osx.yaml
