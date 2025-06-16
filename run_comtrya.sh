@@ -3,7 +3,7 @@
 set -e
 
 REPO_URL="https://github.com/alpar-t/workspace.git"
-REPO_DIR="~/.workspace"
+REPO_DIR=".workspace"
 
 # Clone the repo if not present
 if [ ! -d "$REPO_DIR" ]; then
