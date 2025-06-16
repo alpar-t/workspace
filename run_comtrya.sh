@@ -3,7 +3,7 @@
 set -e
 
 REPO_URL="https://github.com/alpar-t/workspace.git"
-REPO_DIR="workspace"
+REPO_DIR="~/.workspace"
 
 # Clone the repo if not present
 if [ ! -d "$REPO_DIR" ]; then
@@ -22,5 +22,4 @@ if ! command -v comtrya &> /dev/null; then
 fi
 
 # Run comtrya apply in the comtrya directory
-cd comtrya
-comtrya apply "$@"
+$REPO_DIR/comtrya apply  comtrya/osx.yaml
