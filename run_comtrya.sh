@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 REPO_URL="https://github.com/alpar-t/workspace.git"
 REPO_DIR="workspace"
 
@@ -15,7 +17,7 @@ cd "$REPO_DIR"
 # Check if comtrya is installed
 if ! command -v comtrya &> /dev/null; then
   echo "comtrya not found. Installing..." 
-  curl -fsSL https://install.comtrya.dev | bash
+  curl -fsSL https://get.comtrya.dev | bash
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
