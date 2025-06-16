@@ -38,3 +38,11 @@ actions:
   - action: package.install
     provider: homebrew
     name: findutils
+  - action: package.install
+    provider: homebrew
+    name: gh
+  - action: package.install
+    provider: homebrew
+    name: jira-cli 
+# brew tap ankitpokhrel/jira-cli
+# brew install jira-cli

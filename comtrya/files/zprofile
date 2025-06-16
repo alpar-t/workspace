@@ -45,6 +45,9 @@ gradlew() {
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
+setopt INC_APPEND_HISTORY   
+setopt SHARE_HISTORY 
+setopt appendhistory
 
 for name in  ~/.zprofile.d/*.zprofile ; do
    source $name

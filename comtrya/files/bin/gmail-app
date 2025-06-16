@@ -1,2 +1,3 @@
 #!/bin/bash
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=https://mail.google.com/mail/u/3/#inbox
+#/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=https://mail.google.com/mail/u/3/#inbox
+/Applications/Vivaldi.app/Contents/MacOS/Vivaldi --app=https://mail.google.com/mail/u/0/#inbox

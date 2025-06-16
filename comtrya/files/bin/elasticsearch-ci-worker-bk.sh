@@ -24,7 +24,7 @@ if ! [ -z "$2" ] ; then
     esac
 fi
 
-NAME=alpar-ci-$IMAGE
+NAME=alpar-ci-$IMAGE-1
 
 gcloud beta compute \
    --project=elastic-cloud-dev \
@@ -33,7 +33,7 @@ gcloud beta compute \
     $SIZE \
     --subnet=default --network-tier=PREMIUM \
     --no-restart-on-failure --maintenance-policy=TERMINATE \
-   --image-family=family/ci-ubuntu-2004 \
+   --image-family=$IMAGE \
    --image-project=elastic-images-qa \
    --boot-disk-size=350GB --boot-disk-type=pd-ssd \
    --min-cpu-platform="Intel Skylake"  \

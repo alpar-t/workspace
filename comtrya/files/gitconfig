@@ -16,12 +16,12 @@
 [credential]
     helper = cache --timeout 864000
 [url "git@github.com:"]
-    insteadOf = https://github.com/
 [url "git@github.com:"]
-    insteadOf = http://github.com/
+	insteadOf = https://github.com/
 [commit]
     gpgsign = true
 [branch]
     autosetupmerge = always
 [pull]
     ff = only
+
