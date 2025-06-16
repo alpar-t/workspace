@@ -5,7 +5,7 @@ It should make it easy to quickly make the terminal feel familiar on any Linux s
 
 To quickly install your favorite Vivaldi browser extensions, open this file in your browser:
 
-[vivaldi_extensions_links.html](./vivaldi_extensions_links.html)
+[additional](./additional.html)
 
 ## 🚀 Quick Start: Bootstrap a New Mac
 

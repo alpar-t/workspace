@@ -1,0 +1,15 @@
+actions:
+  - action: file.copy
+    src: ../brew_reminder.sh
+    dest: /usr/local/bin/brew_reminder.sh
+
+  - action: file.chmod
+    path: /usr/local/bin/brew_reminder.sh
+    mode: '0755'
+
+  - action: cron.write
+    schedule: '0 9 * * 1'
+    user: "$USER"
+    command: /usr/local/bin/brew_reminder.sh
+    name: brew_reminder
+    state: present

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+bk build create \
+  --pipeline=elastic/unified-release-snapshot \
+  --branch="$(git rev-parse --abbrev-ref HEAD)" \
+  --message="$USER testing"  \
+  --env STACK_BRANCH="main"
