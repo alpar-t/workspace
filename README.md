@@ -1,6 +1,28 @@
 Personal collection of scripts, hacks and configurations to make the command line more productive.
 It should make it easy to quickly make the terminal feel familiar on any Linux system.
 
+## Vivaldi Extensions
+
+To quickly install your favorite Vivaldi browser extensions, open this file in your browser:
+
+[vivaldi_extensions_links.html](./vivaldi_extensions_links.html)
+
+## 🚀 Quick Start: Bootstrap a New Mac
+
+To install everything from this repo on a brand new Mac, just run this command in your terminal:
+
+```sh
+bash <(curl -fsSL https://raw.githubusercontent.com/alpar-t/workspace/master/run_comtrya.sh)
+```
+
+This will:
+- Clone the repository
+- Install [Comtrya](https://comtrya.dev/) if needed
+- Apply all configuration and packages automatically
+
+If you are prompted to install Git, please accept the prompt to install Xcode Command Line Tools.
+
+
 # To Install
 
 Run: 

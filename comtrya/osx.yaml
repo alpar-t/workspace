@@ -4,3 +4,4 @@ depends:
 - liquidprompt
 - zsh
 - git
+- brew_reminder_cron

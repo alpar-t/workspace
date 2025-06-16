@@ -40,9 +40,159 @@ actions:
     name: findutils
   - action: package.install
     provider: homebrew
+    name: vivaldi
+  - action: package.install
+    provider: homebrew
     name: gh
   - action: package.install
     provider: homebrew
     name: jira-cli 
 # brew tap ankitpokhrel/jira-cli
 # brew install jira-cli
+
+  - action: package.install
+    provider: homebrew
+    name: argo
+  - action: package.install
+    provider: homebrew
+    name: argocd
+  - action: package.install
+    provider: homebrew
+    name: autoconf
+  - action: package.install
+    provider: homebrew
+    name: automake
+  - action: package.install
+    provider: homebrew
+    name: awk
+  - action: package.install
+    provider: homebrew
+    name: awscli
+  - action: package.install
+    provider: homebrew
+    name: azure-cli
+  - action: package.install
+    provider: homebrew
+    name: bitwarden-cli
+  - action: package.install
+    provider: homebrew
+    name: buildkite-cli
+  - action: package.install
+    provider: homebrew
+    name: colima
+  - action: package.install
+    provider: homebrew
+    name: dive
+  - action: package.install
+    provider: homebrew
+    name: esphome
+  - action: package.install
+    provider: homebrew
+    name: esptool
+  - action: package.install
+    provider: homebrew
+    name: git
+  - action: package.install
+    provider: homebrew
+    name: gnupg
+  - action: package.install
+    provider: homebrew
+    name: go
+  - action: package.install
+    provider: homebrew
+    name: helm
+  - action: package.install
+    provider: homebrew
+    name: hermit
+  - action: package.install
+  - action: package.install
+    provider: homebrew
+    name: jq
+  - action: package.install
+    provider: homebrew
+    name: lz4
+  - action: package.install
+    provider: homebrew
+    name: lzo
+  - action: package.install
+    provider: homebrew
+    name: nmap
+  - action: package.install
+    provider: homebrew
+    name: node
+  - action: package.install
+    provider: homebrew
+    name: nvm
+  - action: package.install
+    provider: homebrew
+    name: openjdk
+  - action: package.install
+    provider: homebrew
+    name: openssl@3
+  - action: package.install
+    provider: homebrew
+    name: pinentry-mac
+  - action: package.install
+    provider: homebrew
+    name: pre-commit
+  - action: package.install
+    provider: homebrew
+    name: psutils
+  - action: package.install
+    provider: homebrew
+    name: python@3.13
+  - action: package.install
+    provider: homebrew
+    name: skopeo
+  - action: package.install
+    provider: homebrew
+    name: sqlite
+  - action: package.install
+    provider: homebrew
+    name: sshpass
+  - action: package.install
+    provider: homebrew
+    name: vault
+  - action: package.install
+    provider: homebrew
+    name: virtualenv
+  - action: package.install
+    provider: homebrew
+    name: wget
+  - action: package.install
+    provider: homebrew
+    name: wireshark
+  - action: package.install
+    provider: homebrew
+    name: xorgproto
+  - action: package.install
+    provider: homebrew
+    name: xz
+  - action: package.install
+    provider: homebrew
+    name: yarn
+  - action: package.install
+    provider: homebrew
+    name: yq
+  - action: package.install
+    provider: homebrew
+    name: zstd
+  - action: package.install
+    provider: homebrew
+    name: font-fira-mono-for-powerline
+  - action: package.install
+    provider: homebrew
+    name: inkscape
+  - action: package.install
+    provider: homebrew
+    name: keybase
+  - action: package.install
+    provider: homebrew
+    name: macvim
+  - action: package.install
+    provider: homebrew
+    name: zoom
+  - action: package.install
+    provider: homebrew
+    name: slack
+
