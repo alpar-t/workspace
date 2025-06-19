@@ -1,7 +1,7 @@
 [user]
     name = Alpar Torok
     email = alpar.torok@elastic.co
-    signingkey = 546164978618BC0B
+	signingkey = /Users/alpar/.ssh/id_rsa_github
 [color]
     ui = true
 [alias]
@@ -25,3 +25,5 @@
 [pull]
     ff = only
 
+[gpg]
+	format = ssh

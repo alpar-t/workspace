@@ -1,7 +1,7 @@
 # This relies on a key database generated with
 # `autoload autoload zkbd ; zkbd`
 # On OSX terminal settings also need to be tweaked and mappings for
-#  Home, End, PageUp (\033[[~7) and PageDown (\033[[~8) in Preferences -> Profile -> Keyboard
+#  Home (\033[1~), End (\033[4~), PageUp (\033[7~) and PageDown (\033[8~) in Preferences -> Profile -> Keyboard
 
 
 if [ $OS = "Darwin" ] ; then

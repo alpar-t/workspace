@@ -49,6 +49,8 @@ setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY 
 setopt appendhistory
 
+export EDITOR=vim
+
 for name in  ~/.zprofile.d/*.zprofile ; do
    source $name
 done

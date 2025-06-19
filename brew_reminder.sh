@@ -1,5 +1,7 @@
 #!/bin/bash
 
-if brew outdated | grep .; then
-  osascript -e 'display notification "Some Homebrew packages are outdated!" with title "Brew Reminder"'
+
+OUTDATED=$(brew outdated)
+if [ -n "$OUTDATED" ] ; then
+  terminal-notifier -title "Some Homebrew packages are outdated" -message "$OUTDATED" -sender com.apple.Terminal
 fi

@@ -3,7 +3,7 @@
 set -e
 
 REPO_URL="https://github.com/alpar-t/workspace.git"
-REPO_DIR=".workspace"
+REPO_DIR="$HOME/.workspace"
 
 # Clone the repo if not present
 if [ ! -d "$REPO_DIR" ]; then
@@ -27,11 +27,12 @@ if ! command -v brew &> /dev/null; then
 fi
 
 # Check if comtrya is installed
-if ! [ -f $REPO_DIR/comtrya-aarch64-apple-darwin ] then
+if ! [ -f $REPO_DIR/comtrya-aarch64-apple-darwin ] ; then
   echo "comtrya not found. Installing..." 
   curl -fsSL https://get.comtrya.dev | bash
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Run comtrya apply in the comtrya directory
-$REPO_DIR/comtrya-aarch64-apple-darwin apply comtrya/osx.yaml
+cd comtrya
+../comtrya-aarch64-apple-darwin -v --manifest-directory . apply
